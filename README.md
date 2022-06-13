@@ -10,15 +10,16 @@
 3. Public resources and future directions
 
 ### Ribo-seq data analysis with RiboTaper
-1. Required software (https://ohlerlab.mdc-berlin.de/software/RiboTaper_126/ Bedtools executables (v2.17) and R (3.0.1) with the following packagesseqinr_3.1-3, ade4_1.7-2, multitaper_1.0-11 , doMC_1.3.3, iterators_1.0.7, foreach_1.4.2 and XNomial_1.0.1)
+1. [Required software](https://ohlerlab.mdc-berlin.de/software/RiboTaper_126/): Bedtools executables (v2.17) and R (3.0.1) with the following packagesseqinr_3.1-3, ade4_1.7-2, multitaper_1.0-11 , doMC_1.3.3, iterators_1.0.7, foreach_1.4.2 and XNomial_1.0.1)
 2. Data requirement (RNAseq+Riboseq)
 3. Code example
 
 ### Ribo-seq data quality control with Ribo-seQC
 #### Check if the modified function works for the sample dataset
 1. Run Ribo-seQC 
-2. Calculate periodicity
+2. [Calculate periodicity](https://github.com/hsinyenwu/Ribo-seq-informatics-2022/blob/main/Ribo-seqQC%20calculate%203nt%20periodicity.md)
 3. 
+
 
 ### Ribo-seq data quantification with ORFquant
 
