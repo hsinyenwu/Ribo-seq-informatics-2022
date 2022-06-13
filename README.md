@@ -10,7 +10,7 @@
 3. Public resources and future directions
 
 ### Ribo-seq data analysis with RiboTaper
-1. Required software (https://ohlerlab.mdc-berlin.de/software/RiboTaper_126/ Bedtools executables (v2.17) and seqinr_3.1-3, ade4_1.7-2, multitaper_1.0-11 , doMC_1.3.3, iterators_1.0.7, foreach_1.4.2, XNomial_1.0.1)
+1. Required software (https://ohlerlab.mdc-berlin.de/software/RiboTaper_126/ Bedtools executables (v2.17) and R (3.0.1) with the following packagesseqinr_3.1-3, ade4_1.7-2, multitaper_1.0-11 , doMC_1.3.3, iterators_1.0.7, foreach_1.4.2 and XNomial_1.0.1)
 2. Data requirement (RNAseq+Riboseq)
 3. Code example
 
