@@ -27,7 +27,7 @@ F1/(F1+F2+F3)*100 #[1] 91.03305
 
 #### Note:
 Ribo-seQC provides a value called **"frame preference"**. This value calculate the periodicity in the blue box below:
-<img width="627" alt="image" src="https://user-images.githubusercontent.com/4383665/173368221-3d5ba715-53ae-4d9a-bc0d-5a03af1e4ced.png">
-First note, this plot starts differently than the top plot shown above. This plot and the frame preference are used for determine the cutoff value for different lengths of Ribo-seq reads. Frame preference gives you an idea about periodicity, but (1) it could miss the front area with high periodicity (2) included the last codon before stop, which has a signiture peak at the 2nd nucleotide. Therefore, frame preference is usually lower than 3nt periodicity calculated above.
+<img width="627" alt="image" src="https://user-images.githubusercontent.com/4383665/173368221-3d5ba715-53ae-4d9a-bc0d-5a03af1e4ced.png">  
+Please note this plot starts differently than the plot shown above. This plot and the frame preference are used for determine the cutoff value for different lengths of Ribo-seq reads. Frame preference gives you an idea about periodicity, but (1) it could miss the front area with high periodicity (2) included the last codon before stop, which has a signiture peak at the 2nd nucleotide. Therefore, frame preference is usually lower than 3nt periodicity calculated above.
 
 
