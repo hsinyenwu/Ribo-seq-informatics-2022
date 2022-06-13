@@ -9,10 +9,17 @@ The code before stop codon usually have a high peak at the second nucleotide (se
 ```
 # Load the results_RiboseQC file from Ribo-seQC output
 load("~/Desktop/New_Riboseq/NEB_STAR_out/star_ribo_NEB3Aligned.sortedByCoord.out.bam_results_RiboseQC")
-P_sites_subcodon_readCount=res_all[["profiles_P_sites"]][["P_sites_subcodon"]][["nucl"]][["28"]]
-P_CDS=P_sites_subcodon_readCount[51:149]
-F1=sum(P_CDS[seq(1,93,by=3)])
-F2=sum(P_CDS[seq(2,93,by=3)])
-F3=sum(P_CDS[seq(3,93,by=3)])
+# Extract P_sites_subcodon
+P_sites_subcodon_readCount = res_all[["profiles_P_sites"]][["P_sites_subcodon"]][["nucl"]][["28"]]
+# Print out P_sites_subcodon_readCount
+P_sites_subcodon_readCount
+
+# Get the CDS region
+P_CDS = P_sites_subcodon_readCount[51:149] #99 nt total, 33nt start and after, 33nt in the middle, 33nt stop and before
+
+# Get total number of reads for 3 frames
+F1 = sum(P_CDS[seq(1,93,by=3)])
+F2 = sum(P_CDS[seq(2,93,by=3)])
+F3 = sum(P_CDS[seq(3,93,by=3)])
 F1/(F1+F2+F3)*100 #[1] 91.03305
 ```
