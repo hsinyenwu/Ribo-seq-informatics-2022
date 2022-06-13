@@ -1,9 +1,9 @@
 ## Calculate 3nt periodicity for CDS region
 
-In this case, we calculate the 3-nt periodicity for 28 nucleotide long reads
+In this case, we calculate the 3-nt periodicity for 28 nucleotide long reads. The figure below is from Ribo-seQC output.
 <img width="839" alt="image" src="https://user-images.githubusercontent.com/4383665/173270126-6e057416-c4c7-44ab-b7b7-c1498fd2756e.png">
 
-The code before stop codon usually have a high peak at the second nucleotide
+The code before stop codon usually have a high peak at the second nucleotide. The figure below is from Ribo-seQC output.
 <img width="145" alt="image" src="https://user-images.githubusercontent.com/4383665/173270154-df8d6cee-e669-435f-a569-3fc003398865.png">
 
 ```
