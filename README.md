@@ -25,6 +25,8 @@
 
 ### Ribo-seq visualization with RiboPlotR
 
-
+X: Calculate P sites from ORFquant output
+X: All files in the same folder for running ORFquant
+X: 
 
 
