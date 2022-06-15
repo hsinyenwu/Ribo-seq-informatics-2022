@@ -25,8 +25,9 @@
 
 ### Ribo-seq visualization with RiboPlotR
 
-X: Calculate P sites from ORFquant output
-X: All files in the same folder for running ORFquant
-X: 
+Other Topics
+1. Obtain P sites from ORFquant output
+2. All files in the same folder for running ORFquant
+3. Fields required for the GTF
 
 
