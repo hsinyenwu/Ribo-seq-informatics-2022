@@ -29,5 +29,6 @@ Other Topics
 1. Obtain P sites from ORFquant output
 2. All files in the same folder for running ORFquant
 3. Fields required for the GTF
+4. Prepare the GTF
 
 
