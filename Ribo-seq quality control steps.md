@@ -1,4 +1,6 @@
-#Step 1 code:
+Steps for Ribo-seq quality control:
+
+```#Step 1 code:
 #Run in linux server or cluster
 #$INPUT input directory
 #$OUTPUT output directory
@@ -155,6 +157,6 @@ R2 <- round(cor(TPM2[,1:3]),2)
 pdf("~/Desktop/New_Riboseq/NEB_samples_correlation.pdf",width =4,height = 4)
 corrplot(R2, method = "number",type="upper")
 dev.off()
-
+```
 
 
