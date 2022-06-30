@@ -32,5 +32,3 @@ pct_covered_onlymulti_rna<-percentage of the ORF region only supported by multim
 header_tofasta<-header used in the generated protein fasta file
 ORF_pept<-peptide sequence of the identified ORF
 ```
-
-![image](https://user-images.githubusercontent.com/4383665/176770643-ea2a0784-ffac-4794-8e44-3bd29310141d.png)
