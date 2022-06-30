@@ -6,8 +6,9 @@ Steps for Ribo-seq quality control:
 #$OUTPUT output directory
 
 zcat $INPUT/NEB123.fastq.gz | fastx_clipper -o $OUTPUT/NEB123.trim.fastq -a CTGTAGGCACCATCAAT -l 20 -c -n -v -Q33
+```
 
-
+```
 #Step 2 code:
 #Run in linux server or cluster
 #$CF is the directory contain FASTA files
@@ -17,7 +18,9 @@ zcat $INPUT/NEB123.fastq.gz | fastx_clipper -o $OUTPUT/NEB123.trim.fastq -a CTGT
 bowtie2-build $CF/Araport11_201606_rRNA.fasta,$CF/Araport11_201606_tRNA.fasta,$CF/Araport11_201606_snRNA.fasta,$CF/Araport11_201606_snoRNA.fasta,$CF2/AT3G06365_AT2G03875.fa Contam5
 
 bowtie2 -L 20 -p 8 -x $Contam5 $OUTPUT/NEB123.trim.fastq --un-gz $OUTPUT/NEB123.noContam5.fastq.gz
+```
 
+```
 #Step 3 A code:
 #Run in linux server or cluster
 #$starIndex1 is the directory contain FASTA files
@@ -26,14 +29,15 @@ bowtie2 -L 20 -p 8 -x $Contam5 $OUTPUT/NEB123.trim.fastq --un-gz $OUTPUT/NEB123.
 #$INPUT is the directory with the index for the contamination sequences 
 #$OUTPUT is the output directory
 
-
 STAR --runThreadN 12 \
 --runMode genomeGenerate \
 --genomeDir $starIndex1 \
 --genomeFastaFiles $FASTA \
 --sjdbGTFfile $GTF \
 --sjdbOverhang 34 \
+```
 
+```
 #Step 3 B code:
 #Run in linux server or cluster
 #$starIndex1 is the directory contain FASTA files
@@ -57,7 +61,9 @@ STAR --runThreadN 10 \
 --outSAMmultNmax 1 \
 --outMultimapperOrder Random \
 --outFileNamePrefix "star_ribo_NEB123" \
+```
 
+```
 #Step 4 code:
 #Create 2bit files
 #Run the code in R (v. 4.1.3) locally, on server or cluster
@@ -78,7 +84,9 @@ prepare_annotation_files(annotation_directory = ".",
                          annotation_name = "TAIR10",export_bed_tables_TxDb = F,forge_BSgenome = T,create_TxDb = T)
 
 RiboseQC_analysis(annotation_file="~/Desktop/New_Riboseq/Araport11_20220629.gtf_Rannot",bam_files = "~/Desktop/New_Riboseq/Contam4/star_ribo_NEB123_Contam4_Aligned.sortedByCoord.out.bam",report_file = "NEB123_noContam4.html",write_tmp_files = F)
+```
 
+```
 Example gtf file (the 9th column is the key for running RiboseQC):
 1	Araport11	gene	3631	5899	.	+	.	gene_id "AT1G01010"; gene_biotype "protein_coding";
 1	Araport11	CDS	3760	3913	.	+	0	gene_id "AT1G01010"; transcript_id "AT1G01010.1"; gene_biotype "protein_coding";
@@ -125,20 +133,26 @@ Mt	Araport11	gene	366086	366700	.	-	.	gene_id "ATMG01410"; gene_biotype "protein
 Mt	Araport11	CDS	366086	366700	.	-	0	gene_id "ATMG01410"; transcript_id "ATMG01410.1"; gene_biotype "protein_coding";
 Mt	Araport11	transcript	366086	366700	.	-	.	gene_id "ATMG01410"; transcript_id "ATMG01410.1"; gene_biotype "protein_coding";
 Mt	Araport11	exon	366086	366700	.	-	.	gene_id "ATMG01410"; transcript_id "ATMG01410.1"; gene_biotype "protein_coding";
+```
 
+```
 Step 5A: Kallisto (v0.46.1) indexing:
 
 #$OUTPUT is the path to the output folder
 #$FASTA is the path to the transcript fasta file
 kallisto index -i $OUTPUT/transcripts.idx $FASTA -k 19
+```
 
+```
 Step 5B: Kallisto mapping for Ribo-seq reads
 # The three fastq.gz files are from the three tech replicates using step 1 and step 2 code to analyze 
 
 kallisto quant -i $Index/transcripts.idx -o $OUTPUT1 -t 10 --single -l 28 -s 2 $INPUT/NEB1.noContam5.fastq.gz
 kallisto quant -i $Index/transcripts.idx -o $OUTPUT2 -t 10 --single -l 28 -s 2 $INPUT/NEB2.noContam5.fastq.gz
 kallisto quant -i $Index/transcripts.idx -o $OUTPUT3 -t 10 --single -l 28 -s 2 $INPUT/NEB3.noContam5.fastq.gz
+```
 
+```
 Step 5C: Correlation plot
 library(dplyr)
 library(corrplot)
