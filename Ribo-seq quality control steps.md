@@ -173,6 +173,6 @@ corrplot(R2, method = "number",type="upper")
 dev.off()
 ```
 
-[Step 6: Calculate 3-nt periodicity]{https://github.com/hsinyenwu/Ribo-seq-informatics-2022/blob/main/Ribo-seqQC%20calculate%203nt%20periodicity.md}
+[Step 6: Calculate 3-nt periodicity](https://github.com/hsinyenwu/Ribo-seq-informatics-2022/blob/main/Ribo-seqQC%20calculate%203nt%20periodicity.md)
 
 
