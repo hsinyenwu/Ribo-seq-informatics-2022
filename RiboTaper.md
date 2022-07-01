@@ -1,4 +1,4 @@
-Output information:
+RiboTaper output column information:
 ```
 gene_id<-gene id based on the annotation used
 gene_symbol<-gene name based on the annotation used
