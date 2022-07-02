@@ -15,7 +15,7 @@ P_sites_subcodon_readCount = res_all[["profiles_P_sites"]][["P_sites_subcodon"]]
 P_sites_subcodon_readCount
 
 # Get the CDS region
-P_CDS = P_sites_subcodon_readCount[51:149] #99 nt total, 33nt start and after, 33nt in the middle, 33nt stop and before
+P_CDS = P_sites_subcodon_readCount[51:149] #93 nt total, 33 nt start and after, 33 nt in the middle, 27 nt from -2 codon of stop codon to -11 codon of stop codon
 
 # Get total number of reads for 3 frames
 F1 = sum(P_CDS[seq(1,93,by=3)])
