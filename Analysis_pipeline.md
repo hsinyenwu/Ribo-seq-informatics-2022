@@ -146,19 +146,22 @@ Mt	Araport11	exon	366086	366700	.	-	.	gene_id "ATMG01410"; transcript_id "ATMG01
 ```
 
 ### Step 6A: Kallisto (v0.46.1) indexing:
-
+```
 #$OUTPUT is the path to the output folder
 #$FASTA is the path to the transcript fasta file
 kallisto index -i $OUTPUT/transcripts.idx $FASTA -k 19
+```
 
 ### Step 6B: Kallisto mapping for Ribo-seq reads
-** The three fastq.gz files are from the three tech replicates using step 1 and step 2 code to analyze **  
-
+```
+#The three fastq.gz files are from the three tech replicates using step 1 and step 2 code to analyze
 kallisto quant -i $Index/transcripts.idx -o $OUTPUT1 -t 10 --single -l 28 -s 2 $INPUT/NEB1.noContam5.fastq.gz
 kallisto quant -i $Index/transcripts.idx -o $OUTPUT2 -t 10 --single -l 28 -s 2 $INPUT/NEB2.noContam5.fastq.gz
 kallisto quant -i $Index/transcripts.idx -o $OUTPUT3 -t 10 --single -l 28 -s 2 $INPUT/NEB3.noContam5.fastq.gz
+```
 
-Step 6C: Correlation plot
+### Step 6C: Correlation plot
+```
 library(dplyr)
 library(corrplot)
 RiboD1 <- read.delim("~/Desktop/New_Riboseq/NEB1_abundance.tsv",header=T,sep="\t",stringsAsFactors = F,quote = "")
@@ -176,8 +179,10 @@ R2 <- round(cor(TPM2[,1:3]),2)
 pdf("~/Desktop/New_Riboseq/NEB_samples_correlation.pdf",width =4,height = 4)
 corrplot(R2, method = "number",type="upper")
 dev.off()
+```
 
-Step 7: Calculate 3-nt periodicity
+### Step 7: Calculate 3-nt periodicity
+```
 # Load the results_RiboseQC file from Ribo-seQC output
 load("~/Desktop/New_Riboseq/star_ribo_NEB123Aligned.sortedByCoord.out.bam_results_RiboseQC")
 # Extract P_sites_subcodon
@@ -193,3 +198,5 @@ F1 = sum(P_CDS[seq(1,93,by=3)])
 F2 = sum(P_CDS[seq(2,93,by=3)])
 F3 = sum(P_CDS[seq(3,93,by=3)])
 F1/(F1+F2+F3)*100 #[1] 91.03305
+```
+
