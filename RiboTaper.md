@@ -1,4 +1,21 @@
-RiboTaper output column information:
+### How to run RiboTaper:
+First, create the annotation files   
+Second, find the offset/cutoff for the P-site position (Obtain from Ribo-seQC)  
+Third, run RiboTaper for ORF discovery  
+```
+# Run on server or cluster
+# Use the right version of R (and R packages) and bedtools
+TAPER=/mnt/research/riboplant/Software/RiboTaper_v1.3/scripts
+RNA=/mnt/home/larrywu/Kyle_CTRL/analysis_Araport11_1st+2nd_Riboseq/STAR1/RNA_CTRL_merged
+RIBO=/mnt/home/larrywu/Protocol_Riboseq/data/STAR/ribo
+ANNO=/mnt/home/larrywu/Kyle_CTRL/analysis_Araport11_1st+2nd_Riboseq/RiboTaper_annotation
+BED=/mnt/home/larrywu/Software/bedtools_dir
+OUTPUT=/mnt/home/larrywu/Protocol_Riboseq/data/RiboTaper_NEB1
+
+$TAPER/Ribotaper.sh $RIBO/star_riboAligned.sortedByCoord.out.bam $RNA/star_RNA_Aligned.sortedByCoord.out.bam $ANNO 24,25,26,27,28 8,9,10,11,12 $TAPER $BED 8
+```
+
+### RiboTaper ORFs_max_filt file column information:
 ```
 gene_id<-gene id based on the annotation used
 gene_symbol<-gene name based on the annotation used
