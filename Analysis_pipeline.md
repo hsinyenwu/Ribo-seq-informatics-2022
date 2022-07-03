@@ -1,32 +1,39 @@
-### Step 1 code (FASTQC for quality check):
-```#Run in linux server or cluster
+### Step 1: FASTQC for quality check
+```
+#Run in linux server or cluster
 #$OUTPUT output directory
 #The code below is to check all .gz file in the directory
 
 fastqc -o $OUTPUT -t 10 *.gz
 ```
 
-### Step 2 code (FASTX toolkit to trim adaptor sequence):
-```#Run in linux server or cluster
+### Step 2: FASTX toolkit to trim adaptor sequence:
+```
+#Run in linux server or cluster
 #$INPUT input directory
 #$OUTPUT output directory
 
 zcat $INPUT/NEB123.fastq.gz | fastx_clipper -o $OUTPUT/NEB123.trim.fastq -a CTGTAGGCACCATCAAT -l 20 -c -n -v -Q33
 ```
 
-### Step 3 code:
-```#Run in linux server or cluster
+### Step 3 A Create Bowtie2 index for contamination sequences:
+```
+#Run in linux server or cluster
 #$CF is the directory contain FASTA files
 #$Contam5 is the directory with the index for the contamination sequences 
 #$OUTPUT output directory
 
 bowtie2-build $CF/Araport11_201606_rRNA.fasta,$CF/Araport11_201606_tRNA.fasta,$CF/Araport11_201606_snRNA.fasta,$CF/Araport11_201606_snoRNA.fasta,$CF2/AT3G06365_AT2G03875.fa Contam5
-
+```
+### Step 3B Remove contamination sequences with Bowtie2:
+```
+#$OUTPUT output directory
 bowtie2 -L 20 -p 8 -x $Contam5 $OUTPUT/NEB123.trim.fastq --un-gz $OUTPUT/NEB123.noContam5.fastq.gz
 ```
 
-### Step 4 A code:
-```#Run in linux server or cluster
+### Step 4 A: Create index files for STAR
+```
+#Run in linux server or cluster
 #$starIndex1 is the directory contain FASTA files
 #FASTA is the path to the TAIR10 genome FASTA file
 #GTF is the path to the Araport11 GTF file 
@@ -41,8 +48,9 @@ STAR --runThreadN 12 \
 --sjdbOverhang 34 \
 ```
 
-### Step 4 B code:
-```#Run in linux server or cluster
+### Step 4 B STAR : Map reads to genome with STAR
+```
+#Run in linux server or cluster
 #$starIndex1 is the directory contain FASTA files
 #$INPUT is the directory with the NEB123.noContam5.fastq.gz file
 #$OUTPUT is the output directory
@@ -65,8 +73,9 @@ STAR --runThreadN 10 \
 --outFileNamePrefix "star_ribo_NEB123" \
 ```
 
-### Step 5 code:
-```#Create 2bit files
+### Step 5: Run Ribo-seQC
+```
+#Create 2bit files
 #Run the code in R (v. 4.1.3) locally, on server or cluster
 
 library(Biostrings)
@@ -135,14 +144,15 @@ Mt	Araport11	CDS	366086	366700	.	-	0	gene_id "ATMG01410"; transcript_id "ATMG014
 Mt	Araport11	transcript	366086	366700	.	-	.	gene_id "ATMG01410"; transcript_id "ATMG01410.1"; gene_biotype "protein_coding";
 Mt	Araport11	exon	366086	366700	.	-	.	gene_id "ATMG01410"; transcript_id "ATMG01410.1"; gene_biotype "protein_coding";
 ```
-Step 6A: Kallisto (v0.46.1) indexing:
+
+### Step 6A: Kallisto (v0.46.1) indexing:
 
 #$OUTPUT is the path to the output folder
 #$FASTA is the path to the transcript fasta file
 kallisto index -i $OUTPUT/transcripts.idx $FASTA -k 19
 
-Step 6B: Kallisto mapping for Ribo-seq reads
-# The three fastq.gz files are from the three tech replicates using step 1 and step 2 code to analyze 
+### Step 6B: Kallisto mapping for Ribo-seq reads
+** The three fastq.gz files are from the three tech replicates using step 1 and step 2 code to analyze **  
 
 kallisto quant -i $Index/transcripts.idx -o $OUTPUT1 -t 10 --single -l 28 -s 2 $INPUT/NEB1.noContam5.fastq.gz
 kallisto quant -i $Index/transcripts.idx -o $OUTPUT2 -t 10 --single -l 28 -s 2 $INPUT/NEB2.noContam5.fastq.gz
