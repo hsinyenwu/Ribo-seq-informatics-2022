@@ -1,6 +1,10 @@
 ## Calculate 3-nt periodicity for CDS region
 
 In this case, we calculate the 3-nt periodicity for 28 nucleotide (length) reads. The figure below is from Ribo-seQC output.  
+
+<img width="594" alt="image" src="https://user-images.githubusercontent.com/4383665/177381417-2645ae2e-f6ab-4c6c-9ac4-b43df382900c.png">
+
+The blue box marks the region for our 3-nt periodicity calculation:
 <img width="603" alt="image" src="https://user-images.githubusercontent.com/4383665/177381221-815e36db-045e-4a24-9bbf-7e30e2deeb77.png">
 
 
