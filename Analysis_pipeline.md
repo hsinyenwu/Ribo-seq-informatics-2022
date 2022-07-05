@@ -201,5 +201,28 @@ F3 = sum(P_CDS[seq(3,93,by=3)])
 F1/(F1+F2+F3)*100 #[1] 91.03305
 ```
 
+### Step 8: RiboTaper 
+**1. Annotation step**
+```
+#$TAPER is the path to RiboTaper code files
+#$GTF path to the GTF files
+#$FASTA path to the FASTA files
+#$OUTPUT path to the output folder
+#$BED path to bedtools v2.17.0
+$TAPER/create_annotations_files.bash $GTF $FASTA false false $OUTPUT $BED $Taper
+```
+
+**2. RiboTaper**
+```
+#$TAPER/Ribotaper.sh path to RiboTaper code files
+#$RIBO/ribo.bam path to Ribo-seq bam file (STAR output)
+#$RNA/RNA.bam path to RNA-seq bam file(STAR output)
+#$ANNO path to RiboTaper annotation files
+#$BED path to bedtools v2.17.0
+#8 is the number of threads used 
+$TAPER/Ribotaper.sh $RIBO/ribo.bam $RNA/RNA.bam $ANNO 24,25,26,27,28 8,9,10,11,12 $TAPER $BED 8
+```
+
+<img width="1048" alt="image" src="https://user-images.githubusercontent.com/4383665/177398880-c809c684-dbff-4e73-95d9-b63bd44a1693.png">
 
 
