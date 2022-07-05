@@ -181,7 +181,8 @@ corrplot(R2, method = "number",type="upper")
 dev.off()
 ```
 
-### Step 7: Calculate 3-nt periodicity [Detail](https://github.com/hsinyenwu/Ribo-seq-informatics-2022/blob/main/Ribo-seqQC%20calculate%203nt%20periodicity.md)
+### Step 7: Calculate 3-nt periodicity 
+[For more detail, see:](https://github.com/hsinyenwu/Ribo-seq-informatics-2022/blob/main/Ribo-seqQC%20calculate%203nt%20periodicity.md)
 ```
 # Load the results_RiboseQC file from Ribo-seQC output
 load("~/Desktop/New_Riboseq/star_ribo_NEB123Aligned.sortedByCoord.out.bam_results_RiboseQC")
