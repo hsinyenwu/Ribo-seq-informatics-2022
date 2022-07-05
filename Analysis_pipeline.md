@@ -202,6 +202,13 @@ F1/(F1+F2+F3)*100 #[1] 91.03305
 ```
 
 ### Step 8: RiboTaper 
+
+RiboTaper runs on Linux, it requires:  
+Samtools(0.1.19, must be in the PATH)
+Bedtools (v2.17.0)  
+R (>3.0.1 and <4.0) with seqinr_3.1-3 ade4_1.7-2 multitaper_1.0-11 doMC_1.3.3 iterators_1.0.7 foreach_1.4.2 XNomial_1.0.1
+See [link](https://ohlerlab.mdc-berlin.de/software/RiboTaper_126/) for detail
+
 **1. Annotation step**
 ```
 #$TAPER is the path to RiboTaper code files
@@ -223,6 +230,5 @@ $TAPER/create_annotations_files.bash $GTF $FASTA false false $OUTPUT $BED $Taper
 $TAPER/Ribotaper.sh $RIBO/ribo.bam $RNA/RNA.bam $ANNO 24,25,26,27,28 8,9,10,11,12 $TAPER $BED 8
 ```
 
-<img width="1048" alt="image" src="https://user-images.githubusercontent.com/4383665/177398880-c809c684-dbff-4e73-95d9-b63bd44a1693.png">
 
 
