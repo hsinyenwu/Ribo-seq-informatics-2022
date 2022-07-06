@@ -234,7 +234,7 @@ $TAPER/create_annotations_files.bash $GTF $FASTA false false $OUTPUT $BED $Taper
 $TAPER/Ribotaper.sh $RIBO/ribo.bam $RNA/RNA.bam $ANNO 24,25,26,27,28 8,9,10,11,12 $TAPER $BED 8
 ```
 
-### RiboTaper ORFs_max_filt file column information:
+### RiboTaper ORFs_max_filt file output column information:
 ```
 gene_id<-gene id based on the annotation used
 gene_symbol<-gene name based on the annotation used
