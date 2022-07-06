@@ -17,7 +17,7 @@ cd $ANNO
 $TAPER/create_annotations_files.bash $GTF $FASTA false false $OUTPUT $BEDTOOL $TAPER/
 ```
 
-**Second, find the offset/cutoff for the P-site position (Obtain from Ribo-seQC) [See Step 5: Run Ribo-seQC](https://github.com/hsinyenwu/Ribo-seq-informatics-2022/blob/main/Analysis_pipeline.md)**  
+**Second, find the offset/cutoff for different length of reads (Obtain from Ribo-seQC) [See Step 5: Run Ribo-seQC](https://github.com/hsinyenwu/Ribo-seq-informatics-2022/blob/main/Analysis_pipeline.md)**  
 
 **Third, run RiboTaper for ORF discovery**  
 
