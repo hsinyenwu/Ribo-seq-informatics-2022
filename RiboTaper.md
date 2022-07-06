@@ -1,8 +1,5 @@
 ### How to run RiboTaper:
-First, create the annotation files   
-Second, find the offset/cutoff for the P-site position (Obtain from Ribo-seQC)  
-Third, run RiboTaper for ORF discovery 
-
+**First, create the annotation files **    
 ```
 # Step 1
 
@@ -20,6 +17,9 @@ cd $ANNO
 $TAPER/create_annotations_files.bash $GTF $FASTA false false $OUTPUT $BEDTOOL $TAPER/
 ```
 
+**Second, find the offset/cutoff for the P-site position (Obtain from Ribo-seQC) [See Step 5: Run Ribo-seQC](https://github.com/hsinyenwu/Ribo-seq-informatics-2022/blob/main/Analysis_pipeline.md)**  
+
+**Third, run RiboTaper for ORF discovery **  
 ```
 # Step 2
 # Run on server or cluster
@@ -35,7 +35,6 @@ $TAPER/create_annotations_files.bash $GTF $FASTA false false $OUTPUT $BEDTOOL $T
 # Run Ribotaper.sh
 cd $OUTPUT
 $TAPER/Ribotaper.sh $RIBO/ribo.bam $RNA/RNA.bam $ANNO 24,25,26,27,28 8,9,10,11,12 $TAPER $BED 8
-
 ```
 
 ### RiboTaper ORFs_max_filt file column information:
