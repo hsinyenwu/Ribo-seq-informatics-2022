@@ -1,6 +1,5 @@
 ### How to run RiboTaper:
-**First, create the annotation files **  
-
+**First, create the annotation files**  
 ```
 # Step 1
 
@@ -20,7 +19,7 @@ $TAPER/create_annotations_files.bash $GTF $FASTA false false $OUTPUT $BEDTOOL $T
 
 **Second, find the offset/cutoff for the P-site position (Obtain from Ribo-seQC) [See Step 5: Run Ribo-seQC](https://github.com/hsinyenwu/Ribo-seq-informatics-2022/blob/main/Analysis_pipeline.md)**  
 
-**Third, run RiboTaper for ORF discovery **  
+**Third, run RiboTaper for ORF discovery**  
 
 ```
 # Step 2
