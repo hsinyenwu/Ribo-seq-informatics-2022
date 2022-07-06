@@ -4,7 +4,6 @@
 2. This workshop is not aimed for teaching R or linux. Basic knowledge for coding will be helpful.
 3. Best to run RiboTaper or ORFquant on cluster or server. Laptop usually takes too long.
 
-<img width="1074" alt="image" src="https://user-images.githubusercontent.com/4383665/177211523-604dfb2c-0fb1-4f64-af87-31e499de45f5.png">
 
 
 ### Topics:
