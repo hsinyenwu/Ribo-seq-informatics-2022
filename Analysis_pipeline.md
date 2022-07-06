@@ -6,6 +6,7 @@
 
 fastqc -o $OUTPUT -t 10 *.gz
 ```
+[FastQC tutorial](https://rtsf.natsci.msu.edu/genomics/tech-notes/fastqc-tutorial-and-faq/)
 
 ### Step 2: FASTX toolkit to trim adaptor sequence:
 ```
