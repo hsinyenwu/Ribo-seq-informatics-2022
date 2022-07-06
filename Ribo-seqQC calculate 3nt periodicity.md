@@ -1,4 +1,4 @@
-## Calculate 3-nt periodicity for CDS region
+## Calculate in-frame percentage (a.k.a. 3-nt periodicity) for CDS region
 
 In this case, we calculated the 3-nt periodicity for 28 nucleotide (length) reads. The figure below is from Ribo-seQC output.  
 
