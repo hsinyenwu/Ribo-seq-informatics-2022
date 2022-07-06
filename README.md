@@ -4,7 +4,7 @@
 2. This workshop is not aimed for teaching R or linux. Basic knowledge for coding will be helpful.
 3. Best to run RiboTaper or ORFquant on cluster or server. Laptop usually takes too long.
 
-
+<img width="1094" alt="image" src="https://user-images.githubusercontent.com/4383665/177567328-f8820e59-1224-49e2-b5db-41a539c746c0.png">
 
 ### Topics:
 1. Brief introduction for Ribo-seq and protocols
