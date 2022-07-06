@@ -1,5 +1,5 @@
 ### How to run RiboTaper:
-**First, create the annotation files **  
+**First, create the annotation files **   
 
 ```
 # Step 1
