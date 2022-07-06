@@ -5,13 +5,18 @@ Third, run RiboTaper for ORF discovery
 
 ```
 # Step 1
-SOFTWARE=/mnt/research/riboplant/Software/RiboTaper_v1.3/scripts
-GTF=/mnt/home/larrywu/ABA/20181206/reference/Araport11_20181206.gtf
-FASTA=/mnt/research/riboplant/Reference/TAIR10_chr_all_2.fas #Watch out how the chromosome number is named! Here is 0, 1, 2, ...
-OUTPUT=/mnt/home/larrywu/Kyle_CTRL/analysis_Araport11_1st+2nd_Riboseq/RiboTaper_annotation
-BEDTOOL=/mnt/home/larrywu/Software/bedtools_dir
+
+#$TAPER is the path to RiboTaper code files
+#$GTF path to the GTF files
+#$FASTA path to the FASTA files
+#$OUTPUT path to the output folder
+#$BED path to bedtools v2.17.0
+#create_annotation_files.bash <gencode_gtf_file> <genome_fasta_file(indexed)> <use_ccdsid?> <use_appris?> <dest_folder> <bedtools_path> <scripts_dir>
+#$TAPER/create_annotations_files.bash $GTF $FASTA false false $OUTPUT $BED $Taper
+#$ANNO path to output files
 
 #Run create_annotations_files.bash
+cd $ANNO
 $TAPER/create_annotations_files.bash $GTF $FASTA false false $OUTPUT $BEDTOOL $TAPER/
 ```
 
@@ -19,15 +24,18 @@ $TAPER/create_annotations_files.bash $GTF $FASTA false false $OUTPUT $BEDTOOL $T
 # Step 3
 # Run on server or cluster
 # Use the right version of R (and R packages) and bedtools
-TAPER=/mnt/research/riboplant/Software/RiboTaper_v1.3/scripts
-RNA=/mnt/home/larrywu/Kyle_CTRL/analysis_Araport11_1st+2nd_Riboseq/STAR1/RNA_CTRL_merged
-RIBO=/mnt/home/larrywu/Protocol_Riboseq/data/STAR/ribo
-ANNO=/mnt/home/larrywu/Kyle_CTRL/analysis_Araport11_1st+2nd_Riboseq/RiboTaper_annotation
-BED=/mnt/home/larrywu/Software/bedtools_dir
-OUTPUT=/mnt/home/larrywu/Protocol_Riboseq/data/RiboTaper_NEB1
+#$TAPER/Ribotaper.sh path to RiboTaper code files
+#$RIBO/ribo.bam path to Ribo-seq bam file (STAR output)
+#$RNA/RNA.bam path to RNA-seq bam file(STAR output)
+#$ANNO path to RiboTaper annotation files
+#$BED path to bedtools v2.17.0
+#8 is the number of threads used 
+#$OUTPUT path to output files
 
 # Run Ribotaper.sh
-$TAPER/Ribotaper.sh $RIBO/star_riboAligned.sortedByCoord.out.bam $RNA/star_RNA_Aligned.sortedByCoord.out.bam $ANNO 24,25,26,27,28 8,9,10,11,12 $TAPER $BED 8
+cd $OUTPUT
+$TAPER/Ribotaper.sh $RIBO/ribo.bam $RNA/RNA.bam $ANNO 24,25,26,27,28 8,9,10,11,12 $TAPER $BED 8
+
 ```
 
 ### RiboTaper ORFs_max_filt file column information:
