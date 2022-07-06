@@ -31,7 +31,7 @@ bowtie2-build $CF/Araport11_201606_rRNA.fasta,$CF/Araport11_201606_tRNA.fasta,$C
 bowtie2 -L 20 -p 8 -x $Contam5 $OUTPUT/NEB123.trim.fastq --un-gz $OUTPUT/NEB123.noContam5.fastq.gz
 ```
 
-### Step 4 A: Create index files for STAR
+### Step 4 A: Create index files for STAR 
 ```
 #Run in linux server or cluster
 #$starIndex1 is the directory contain FASTA files
