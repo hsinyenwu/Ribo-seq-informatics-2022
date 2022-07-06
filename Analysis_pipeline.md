@@ -210,7 +210,7 @@ F1/(F1+F2+F3)*100 #[1] 91.03305
 RiboTaper runs on Linux, it requires:  
 Samtools(0.1.19, must be in the PATH)
 Bedtools (v2.17.0)  
-R (>3.0.1 and <4.0) with seqinr_3.1-3 ade4_1.7-2 multitaper_1.0-11 doMC_1.3.3 iterators_1.0.7 foreach_1.4.2 XNomial_1.0.1  
+**R (>3.0.1 and <4.0)** with seqinr_3.1-3 ade4_1.7-2 multitaper_1.0-11 doMC_1.3.3 iterators_1.0.7 foreach_1.4.2 XNomial_1.0.1  
 [See Ohler Lab website for detail](https://ohlerlab.mdc-berlin.de/software/RiboTaper_126/) 
 
 **1. Annotation step**
