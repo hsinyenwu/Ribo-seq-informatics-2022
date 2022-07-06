@@ -145,6 +145,9 @@ Mt	Araport11	transcript	366086	366700	.	-	.	gene_id "ATMG01410"; transcript_id "
 Mt	Araport11	exon	366086	366700	.	-	.	gene_id "ATMG01410"; transcript_id "ATMG01410.1"; gene_biotype "protein_coding";
 ```
 
+### Step 6: creating correlation plots 
+<img width="689" alt="image" src="https://user-images.githubusercontent.com/4383665/177459978-69251a6f-9692-4ced-bf5a-161bb763ee68.png">
+
 ### Step 6A: Kallisto (v0.46.1) indexing:
 ```
 #$OUTPUT is the path to the output folder
@@ -181,7 +184,7 @@ corrplot(R2, method = "number",type="upper")
 dev.off()
 ```
 
-### Step 7: Calculate 3-nt periodicity 
+### Step 7: Calculate in-frame percentage of Ribo-seq reads
 [For more detail, click here](https://github.com/hsinyenwu/Ribo-seq-informatics-2022/blob/main/Ribo-seqQC%20calculate%203nt%20periodicity.md)
 ```
 # Load the results_RiboseQC file from Ribo-seQC output
