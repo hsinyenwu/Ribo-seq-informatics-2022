@@ -21,7 +21,7 @@ $TAPER/create_annotations_files.bash $GTF $FASTA false false $OUTPUT $BEDTOOL $T
 ```
 
 ```
-# Step 3
+# Step 2
 # Run on server or cluster
 # Use the right version of R (and R packages) and bedtools
 #$TAPER/Ribotaper.sh path to RiboTaper code files
