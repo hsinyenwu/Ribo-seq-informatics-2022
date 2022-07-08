@@ -11,7 +11,7 @@
 2. Ribo-seq data analysis and visualization
 3. Public resources and future directions
 
-[Ribo-seq data analysis pipeline](https://github.com/hsinyenwu/Ribo-seq-informatics-2022/blob/main/Analysis_pipeline.md)
+#### [Ribo-seq data analysis pipeline](https://github.com/hsinyenwu/Ribo-seq-informatics-2022/blob/main/Analysis_pipeline.md)
 
 
 
