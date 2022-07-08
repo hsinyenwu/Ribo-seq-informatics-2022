@@ -213,7 +213,7 @@ Bedtools (v2.17.0)
 **R (>3.0.1 and <4.0)** with seqinr_3.1-3 ade4_1.7-2 multitaper_1.0-11 doMC_1.3.3 iterators_1.0.7 foreach_1.4.2 XNomial_1.0.1  
 [See Ohler Lab website for detail](https://ohlerlab.mdc-berlin.de/software/RiboTaper_126/) 
 
-**1. Annotation step**
+**8.1. Annotation step**
 ```
 #$TAPER is the path to RiboTaper code files
 #$GTF path to the GTF files
@@ -223,7 +223,7 @@ Bedtools (v2.17.0)
 $TAPER/create_annotations_files.bash $GTF $FASTA false false $OUTPUT $BED $Taper
 ```
 
-**2. RiboTaper**
+**8.2. RiboTaper**
 ```
 #$TAPER/Ribotaper.sh path to RiboTaper code files
 #$RIBO/ribo.bam path to Ribo-seq bam file (STAR output)
@@ -268,5 +268,11 @@ pct_covered_onlymulti_rna<-percentage of the ORF region only supported by multim
 header_tofasta<-header used in the generated protein fasta file
 ORF_pept<-peptide sequence of the identified ORF
 ```
+### Step 9: RiboPlotR visualization
+For detail information and examples about RiboPlotR please visit: https://github.com/hsinyenwu/RiboPlotR
+
+### Step 10: Differential translational regulation by deltaTE
+Please see https://currentprotocols.onlinelibrary.wiley.com/doi/epdf/10.1002/cpmb.108 for code and examples.
+
 
 
