@@ -75,6 +75,8 @@ STAR --runThreadN 10 \
 ```
 
 ### Step 5: Run Ribo-seQC
+I suggest to run Ribo-seQC with R >3.5 and <4.0. There are known issues with Ribo-seQC with R>4.  
+You can select 10 percent reads or reads mapped to one chromosome from the STAR output bam file to save time.  
 ```
 #Create 2bit files
 #Run the code in R (v. 4.1.3) locally, on server or cluster
